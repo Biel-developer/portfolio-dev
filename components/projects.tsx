@@ -2,8 +2,8 @@
 
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, Calendar } from "lucide-react"
-import satelite_image from "@/public/img/imagem-satelite.png"
-import ecorota from "@/public/img/ecorota.png"
+import satelite_image from "public/img/imagem-satelite.png"
+import ecorota from "public/img/ecorota.png"
 import { createGunzip } from "zlib"
 
 export function Projects() {
@@ -12,7 +12,7 @@ export function Projects() {
       title: "EcoRota",
       description:
        "Este sistema tem como objetivo otimizar as rotas de coleta de lixo, tornando o processo mais eficiente, econômico e sustentável.",
-      image: "/img/ecorota.png",
+      image: "img/ecorota.png",
       technologies: ["Nextjs","TypeScript","Java","PostgreeSql"],
       category: "Full Stack",
       date: "2025",
