@@ -2,35 +2,31 @@
 
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, Calendar } from "lucide-react"
-import satelite_image from "public/img/imagem-satelite.png"
-import ecorota from "public/img/ecorota.png"
-import { createGunzip } from "zlib"
 
 export function Projects() {
   const projects = [
     {
       title: "EcoRota",
       description:
-       "Este sistema tem como objetivo otimizar as rotas de coleta de lixo, tornando o processo mais eficiente, econômico e sustentável.",
-      image: "img/ecorota.png",
-      technologies: ["Nextjs","TypeScript","Java","PostgreeSql"],
+        "Este sistema tem como objetivo otimizar as rotas de coleta de lixo, tornando o processo mais eficiente, econômico e sustentável.",
+      image: "/img/ecorota.png", 
+      technologies: ["Nextjs", "TypeScript", "Java", "PostgreeSql"],
       category: "Full Stack",
       date: "2025",
       liveUrl: "https://ecorota.vercel.app",
       githubUrl: "https://github.com/Biel-developer/EcoRota",
     },
-     {
+    {
       title: "Satelite App",
       description:
         "Plataforma O projeto visa lançar satélites miniaturizados para coletar dados meteorológicos e monitorar fenômenos terrestres",
-      image: "/img/imagem-satelite.png",
+      image: "/img/imagem-satelite.png", 
       technologies: ["HTML", "CSS", "JSON", "Java Script"],
       category: "Front End",
       date: "2024",
       liveUrl: "https://satellite-manager.vercel.app",
       githubUrl: "https://github.com/Biel-developer/SpaceApps-SatelliteManager",
-    }
-    
+    },
   ]
 
   const getCategoryColor = (category: string) => {
@@ -57,33 +53,33 @@ export function Projects() {
               Meus Projetos
             </span>
           </h2>
-          <p className="text-gray-400 text-center mb-20 text-lg">Uma jornada através das minhas criações digitais</p>
+          <p className="text-gray-400 text-center mb-20 text-lg">
+            Uma jornada através das minhas criações digitais
+          </p>
 
-          {/* Timeline Container */}
           <div className="relative">
-            {/* Central Timeline Line */}
+            {/* Linha da timeline */}
             <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-500/50 via-pink-500/50 to-blue-500/50 rounded-full hidden lg:block"></div>
 
-            {/* Projects Timeline */}
             <div className="space-y-20">
               {projects.map((project, index) => (
                 <div key={index} className="relative">
-                  {/* Timeline Dot */}
+                  {/* Ponto da timeline */}
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full border-4 border-black shadow-lg z-20 hidden lg:block"></div>
 
-                  {/* Project Content */}
+                  {/* Conteúdo */}
                   <div
                     className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-16 ${
                       index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
                     }`}
                   >
-                    {/* Image Side */}
+                    {/* Imagem */}
                     <div className="w-full lg:w-1/2">
                       <div className="relative group">
                         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                         <div className="relative bg-black/40 backdrop-blur-xl border border-purple-500/20 rounded-2xl overflow-hidden group-hover:border-purple-500/40 transition-all duration-300">
                           <img
-                            src={project.image || "/placeholder.svg"}
+                            src={project.image}
                             alt={project.title}
                             className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                           />
@@ -92,12 +88,13 @@ export function Projects() {
                       </div>
                     </div>
 
-                    {/* Content Side */}
+                    {/* Descrição */}
                     <div className="w-full lg:w-1/2 space-y-6">
-                      {/* Category and Date */}
                       <div className="flex items-center justify-between">
                         <span
-                          className={`inline-block px-4 py-2 bg-gradient-to-r ${getCategoryColor(project.category)} text-white text-sm font-semibold rounded-full`}
+                          className={`inline-block px-4 py-2 bg-gradient-to-r ${getCategoryColor(
+                            project.category
+                          )} text-white text-sm font-semibold rounded-full`}
                         >
                           {project.category}
                         </span>
@@ -107,13 +104,14 @@ export function Projects() {
                         </div>
                       </div>
 
-                      {/* Title */}
-                      <h3 className="text-3xl lg:text-4xl font-bold text-white leading-tight">{project.title}</h3>
+                      <h3 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
+                        {project.title}
+                      </h3>
 
-                      {/* Description */}
-                      <p className="text-gray-300 text-lg leading-relaxed">{project.description}</p>
+                      <p className="text-gray-300 text-lg leading-relaxed">
+                        {project.description}
+                      </p>
 
-                      {/* Technologies */}
                       <div className="flex flex-wrap gap-3">
                         {project.technologies.map((tech, techIndex) => (
                           <span
@@ -125,7 +123,6 @@ export function Projects() {
                         ))}
                       </div>
 
-                      {/* Action Buttons */}
                       <div className="flex gap-4 pt-4">
                         <Button
                           asChild
