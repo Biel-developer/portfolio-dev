@@ -14,7 +14,7 @@ export function Projects() {
       technologies: ["Nextjs", "TypeScript", "Java", "PostgreeSql"],
       category: "Full Stack",
       date: "2025",
-      liveUrl: "https://ecorota-eight.vercel.app",
+      liveUrl: "https://ecorota.vercel.app",
       githubUrl: "https://github.com/Biel-developer/EcoRota",
     },
     {
